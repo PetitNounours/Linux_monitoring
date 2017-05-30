@@ -9,7 +9,8 @@ export default class Cmd extends Component {
    }
 
    _fetchData() {
-     const url = `http://127.0.0.1:4000/api/cmd${this.props.process}`;
+    //  const url = `http://flask:8089/api/cmd${this.props.process}`;  //PROD
+     const url = `http://127.0.0.1:4000/api/cmd${this.props.process}`;      //DEV
 		 fetch(url)
 			.then(response => {
 				if (response.status >= 400) {
