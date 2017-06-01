@@ -52,5 +52,11 @@ def chill():
     # return truc2  # --> KO
     return truc2
 
+@app.route("/api/cmdnet", methods=['GET'])
+@cross_origin()
+def cmdnet():
+    data = subprocess.check_output(['sudo','netstat','-lntp'])
+    return data
+
 if __name__ == "__main__":
     app.run(debug=True, port=4000, host='0.0.0.0')

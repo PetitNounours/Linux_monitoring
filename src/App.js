@@ -11,6 +11,7 @@ class App extends Component {
       <div className="columns">
           <Cmd process="ps"/>
           <Cmd process="df"/>
+          <Cmd process="net"/>
       </div>
     );
   }
