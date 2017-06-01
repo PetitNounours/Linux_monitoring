@@ -58,5 +58,14 @@ def cmdnet():
     data = subprocess.check_output(['sudo','netstat','-lntp'])
     return data
 
+@app.route("/api/cmdtop", methods=['GET'])
+@cross_origin()
+def cmdtop():
+    # ps = subprocess.Popen(('ps', '-aux'), stdout=subprocess.PIPE)
+    # data = subprocess.check_output(('head', '-n', '5'), stdin=ps.stdout)
+    top = subprocess.Popen(('top','-b','-n','1'), stdout=subprocess.PIPE)
+    data = subprocess.check_output(('head', '-n', '30'), stdin=top.stdout)
+    return data
+
 if __name__ == "__main__":
     app.run(debug=True, port=4000, host='0.0.0.0')

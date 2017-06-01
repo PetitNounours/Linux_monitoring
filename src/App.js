@@ -12,6 +12,7 @@ class App extends Component {
           <Cmd process="ps"/>
           <Cmd process="df"/>
           <Cmd process="net"/>
+          <Cmd process="top"/>
       </div>
     );
   }
