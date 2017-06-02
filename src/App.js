@@ -8,11 +8,15 @@ import Cmd from './Cmd.js';
 class App extends Component {
   render() {
     return (
-      <div className="columns">
-          <Cmd process="ps"/>
-          <Cmd process="df"/>
-          <Cmd process="net"/>
-          <Cmd process="top"/>
+      <div>
+        <div className="columns">
+            <Cmd process="ps"/>
+            <Cmd process="df"/>
+            <Cmd process="net"/>
+        </div>
+        <div className="columns">
+            <Cmd process="top"/>
+        </div>
       </div>
     );
   }

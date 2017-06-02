@@ -31,8 +31,8 @@ export default class Cmd extends Component {
 
   render() {
 		return (
-			<div className="box">
-        <div className="column">
+			<div className="column is-4">
+        <div>
 				{
 					this.state.dataAPI ? (
 						<div style={{display: "flex", flexDirection: "column"}}>
