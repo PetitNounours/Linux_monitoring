@@ -16,6 +16,8 @@ class App extends Component {
         </div>
         <div className="columns">
             <Cmd process="top"/>
+            <Cmd process="io"/>
+            <Cmd process="up"/>
         </div>
       </div>
     );

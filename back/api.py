@@ -67,5 +67,17 @@ def cmdtop():
     data = subprocess.check_output(('head', '-n', '20'), stdin=top.stdout)
     return data
 
+@app.route("/api/cmdio", methods=['GET'])
+@cross_origin()
+def cmdio():
+    data = subprocess.check_output(['iostat'])
+    return data
+
+@app.route("/api/cmdup", methods=['GET'])
+@cross_origin()
+def cmdup():
+    data = subprocess.check_output(['uptime'])
+    return data
+
 if __name__ == "__main__":
     app.run(debug=True, port=4000, host='0.0.0.0')
